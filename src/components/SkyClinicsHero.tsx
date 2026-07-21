@@ -909,10 +909,10 @@ const Contact = () => {
 
 // ─── Logos Trust Bar ──────────────────────────────────────
 const logos = [
-  { name: 'MARN', full: 'Ministerio de Ambiente y Recursos Naturales' },
-  { name: 'CONAP', full: 'Consejo Nacional de Áreas Protegidas' },
-  { name: 'INAB', full: 'Instituto Nacional de Bosques' },
-  { name: 'CONRED', full: 'Coordinadora Nacional para la Reducción de Desastres' },
+  { name: 'MARN', full: 'Ministerio de Ambiente y Recursos Naturales', img: '/logos/marn.png' },
+  { name: 'CONAP', full: 'Consejo Nacional de Áreas Protegidas', img: '/logos/conap.png' },
+  { name: 'INAB', full: 'Instituto Nacional de Bosques', img: '/logos/inab.png' },
+  { name: 'CONRED', full: 'Coordinadora Nacional para la Reducción de Desastres', img: '/logos/conred.png' },
 ];
 
 const LogoSection = () => (
@@ -930,8 +930,8 @@ const LogoSection = () => (
               whileHover={{ y: -4 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center bg-[#F7F6F2] border border-[#141414]/5">
-                <span className="text-[#3C6E80] text-lg font-bold tracking-tight">{l.name}</span>
+              <div className="w-20 h-20 rounded-xl flex items-center justify-center bg-white border border-[#141414]/5 p-3">
+                <img src={l.img} alt={l.name} className="w-full h-full object-contain" />
               </div>
               <p className="text-[#141414]/40 text-[9px] tracking-[0.1em] text-center max-w-[120px] leading-tight">{l.full}</p>
             </motion.div>
