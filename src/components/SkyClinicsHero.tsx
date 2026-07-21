@@ -389,9 +389,20 @@ const Navigation = () => {
           </div>
 
           <div className="flex items-center gap-6">
-            <span className="hidden md:block text-[11px] tracking-[0.2em] font-medium" style={{ color: 'rgba(20,20,20,0.6)' }}>
+            <motion.a href="https://wa.me/50254137785?text=Quiero%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer"
+              className="hidden md:flex items-center gap-2 text-[11px] tracking-[0.2em] font-medium"
+              style={{ color: 'rgba(20,20,20,0.6)' }}
+              whileHover={{ color: TEAL }}
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              +502 5413 7785
+            </motion.a>
+            <motion.a href="mailto:info@creaproyectos.com" className="hidden md:block text-[11px] tracking-[0.2em] font-medium"
+              style={{ color: 'rgba(20,20,20,0.6)' }}
+              whileHover={{ color: TEAL }}
+            >
               INFO@CREAPROYECTOS.COM
-            </span>
+            </motion.a>
             <motion.button
               onClick={() => setMenuOpen(!menuOpen)}
               className="md:hidden relative w-8 h-8 flex items-center justify-center"
@@ -493,18 +504,20 @@ const Hero = () => {
           </motion.div>
 
           <h1 className="text-[#141414] text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-6 overflow-hidden">
-            <StaggerText text="GESTIÓN" delay={0.6} /><br />
-            <span className="bg-gradient-to-r from-[#3C6E80] to-[#5C7A5E] bg-clip-text text-transparent"><SplitChars text="AMBIENTAL" delay={0.8} /></span><br />
-            <StaggerText text="QUE IMPULSA" delay={0.6} /><br />
+            <StaggerText text="GESTIÓN DE" delay={0.6} /><br />
+            <span className="bg-gradient-to-r from-[#3C6E80] to-[#5C7A5E] bg-clip-text text-transparent"><StaggerText text="PROYECTOS" delay={0.7} /></span><br />
+            <StaggerText text="AMBIENTALES Y DE" delay={0.6} /><br />
             <span className="bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(135deg, ${CARBON}, ${TEAL_DARK})` }}>
-              <SplitChars text="TU PROYECTO" delay={0.9} />
+              <SplitChars text="CONSTRUCCIÓN" delay={0.9} />
             </span>
           </h1>
 
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.2 }} className="text-[#141414]/70 text-base md:text-lg max-w-xl leading-relaxed mb-10">
             Acompañamos a empresas y municipios en la{' '}
             <span className="text-[#3C6E80] font-medium">gestión integral de licencias ambientales</span>,
-            forestales y municipales, con más de una década de experiencia en el sector.
+            forestales y municipales, así como en la{' '}
+            <span className="text-[#3C6E80] font-medium">planificación y ejecución de proyectos</span>{' '}
+            de construcción y obra civil.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.7 }} className="flex flex-wrap gap-4">
@@ -570,9 +583,11 @@ const About = () => (
           </SectionReveal>
           <SectionReveal delay={0.15}>
             <p className="text-[#141414]/70 text-base lg:text-lg leading-relaxed max-w-3xl mb-12">
-              Una firma de consultoría ambiental especializada en{' '}
-              <span className="text-[#141414] font-medium">gestión institucional</span> y
-              licenciamiento ambiental, forestal y municipal. Trabajamos de la mano con{' '}
+              Una firma de consultoría ambiental y ejecutora de proyectos, especializada en{' '}
+              <span className="text-[#141414] font-medium">gestión institucional</span>,
+              licenciamiento ambiental, forestal y municipal, así como en{' '}
+              <span className="text-[#141414] font-medium">planificación, desarrollo y ejecución de obras</span>{' '}
+              de construcción y obra civil. Trabajamos de la mano con{' '}
               <span className="text-[#141414] font-medium">MARN, CONAP, CONRED, INAB</span> y
               municipalidades para asegurar que cada proyecto cumpla con la normativa vigente.
             </p>
@@ -642,8 +657,19 @@ const BuildingIconSvg = ({ color = TEAL_DARK }) => (
     <line x1="8" x2="10" y1="14" y2="14" /><line x1="14" x2="16" y1="14" y2="14" />
   </svg>
 );
+const HardHatIconSvg = ({ color = CARBON }) => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M2 18v2h20v-2" />
+    <path d="M6 18v-6a6 6 0 0 1 12 0v6" />
+    <path d="M12 2v2" />
+    <path d="M4.5 5.5l1.5 1.5" />
+    <path d="M19.5 5.5L18 7" />
+    <path d="M6 12H2" />
+    <path d="M22 12h-4" />
+  </svg>
+);
 
-const serviceIcons = [LeafIconSvg, ClipboardIconSvg, DocumentIconSvg, BuildingIconSvg];
+const serviceIcons = [LeafIconSvg, ClipboardIconSvg, DocumentIconSvg, BuildingIconSvg, HardHatIconSvg];
 
 const services = [
   {
@@ -673,6 +699,13 @@ const services = [
     description: 'Coordinación y representación técnica ante todas las entidades del sector ambiental guatemalteco.',
     items: ['Gestión ante MARN y CONAP', 'Coordinación con CONRED', 'Trámites INAB', 'Gestión municipal descentralizada'],
     color: TEAL_DARK,
+  },
+  {
+    num: '05', short: 'OBRAS',
+    title: 'Planificación y Ejecución de Proyectos',
+    description: 'Desarrollamos y ejecutamos proyectos de construcción y obra civil, con un enfoque integral que abarca desde la planificación hasta la entrega final.',
+    items: ['Planificación y diseño de proyectos', 'Ejecución de obra civil y construcción', 'Gestión de permisos municipales', 'Supervisión y control de calidad'],
+    color: CARBON,
   },
 ];
 
@@ -900,6 +933,24 @@ const Contact = () => {
                 </div>
               </motion.form>
             </SectionReveal>
+            <SectionReveal delay={0.35}>
+              <div className="flex flex-wrap gap-6 mt-8">
+                <motion.a href="mailto:info@creaproyectos.com"
+                  className="flex items-center gap-2 text-sm text-[#141414]/60 hover:text-[#3C6E80] transition-colors"
+                  whileHover={{ x: 4 }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  info@creaproyectos.com
+                </motion.a>
+                <motion.a href="https://wa.me/50254137785?text=Quiero%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-[#141414]/60 hover:text-[#3C6E80] transition-colors"
+                  whileHover={{ x: 4 }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                  +502 5413 7785
+                </motion.a>
+              </div>
+            </SectionReveal>
           </div>
         </div>
       </div>
@@ -1036,6 +1087,28 @@ const FAQ = () => {
   );
 };
 
+// ─── WhatsApp Floating Button ─────────────────────────────
+const WhatsAppFloat = () => (
+  <motion.a
+    href="https://wa.me/50254137785?text=Quiero%20informaci%C3%B3n"
+    target="_blank" rel="noopener noreferrer"
+    className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg"
+    style={{ backgroundColor: '#25D366' }}
+    whileHover={{ scale: 1.1, boxShadow: '0 8px 30px rgba(37,211,102,0.4)' }}
+    whileTap={{ scale: 0.95 }}
+    animate={{ boxShadow: ['0 4px 15px rgba(37,211,102,0.2)', '0 4px 25px rgba(37,211,102,0.4)', '0 4px 15px rgba(37,211,102,0.2)'] }}
+    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+  >
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+    <motion.span className="absolute inset-0 rounded-full" style={{ backgroundColor: '#25D366' }}
+      animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0, 0.3] }}
+      transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+    />
+  </motion.a>
+);
+
 // ─── Footer ───────────────────────────────────────────────
 const Footer = () => (
   <footer className="px-6 md:px-12 lg:px-20 py-16" style={{ backgroundColor: CREMA }}>
@@ -1044,7 +1117,7 @@ const Footer = () => (
         <div className="md:col-span-5">
           <motion.img src="/crealogo.jpeg" alt="CREA PROYECTOS" className="h-12 w-auto mb-6" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} />
           <p className="text-[#141414]/60 text-sm leading-relaxed max-w-xs mb-8">
-            Consultoría ambiental estratégica. Acompañamos tu proyecto desde la gestión de licencias hasta el cumplimiento normativo integral.
+            Consultoría ambiental y ejecutora de proyectos. Acompañamos tu proyecto desde la gestión de licencias hasta la ejecución de obras y cumplimiento normativo integral.
           </p>
           <div className="flex gap-3">
             {[TEAL, VERDE, ARENA].map((color, i) => (
@@ -1056,7 +1129,7 @@ const Footer = () => (
         <div className="md:col-span-3">
           <p className="text-[#141414]/50 text-[11px] tracking-[0.2em] mb-6">SERVICIOS</p>
           <div className="space-y-3">
-            {['EIA', 'PGA', 'Licencias', 'Gestión Institucional'].map((item, i) => (
+            {['EIA', 'PGA', 'Licencias', 'Gestión Institucional', 'Obras'].map((item, i) => (
               <motion.p key={i} className="text-[#141414]/70 text-sm cursor-pointer relative w-fit"
                 whileHover={{ x: 8, color: CARBON, scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 15 }}
@@ -1071,12 +1144,29 @@ const Footer = () => (
         </div>
         <div className="md:col-span-4">
           <p className="text-[#141414]/50 text-[11px] tracking-[0.2em] mb-6">CONTACTO</p>
-          <div className="space-y-3">
-            {['info@creaproyectos.com', '+502 1234 5678', 'Guatemala'].map((item, i) => (
-              <motion.p key={i} className="text-[#141414]/70 text-sm inline-block" whileHover={{ x: 6, color: TEAL, scale: 1.02 }}
+          <div className="space-y-4">
+            <div>
+              <p className="text-[#141414]/30 text-[9px] tracking-[0.15em] mb-1">CORREO</p>
+              <motion.a href="mailto:info@creaproyectos.com" className="text-[#141414]/70 text-sm inline-block"
+                whileHover={{ x: 6, color: TEAL, scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-              >{item}</motion.p>
-            ))}
+              >info@creaproyectos.com</motion.a>
+            </div>
+            <div>
+              <p className="text-[#141414]/30 text-[9px] tracking-[0.15em] mb-1">TELÉFONO</p>
+              <motion.a href="https://wa.me/50254137785?text=Quiero%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer"
+                className="text-[#141414]/70 text-sm inline-block"
+                whileHover={{ x: 6, color: TEAL, scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+              >+502 5413 7785</motion.a>
+            </div>
+            <div>
+              <p className="text-[#141414]/30 text-[9px] tracking-[0.15em] mb-1">UBICACIÓN</p>
+              <motion.p className="text-[#141414]/70 text-sm inline-block"
+                whileHover={{ x: 6, color: TEAL, scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+              >Guatemala</motion.p>
+            </div>
           </div>
         </div>
       </div>
@@ -1117,6 +1207,7 @@ export default function App() {
       <WaveDivider color={CREMA} flip />
       <Contact />
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }
