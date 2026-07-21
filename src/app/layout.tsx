@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "CREA PROYECTOS — Gestión Ambiental Estratégica en Guatemala",
   description:
     "Consultoría ambiental especializada en licencias MARN, INAB, CONAP y municipales. Gestionamos el cumplimiento normativo de tu proyecto en Guatemala.",
+  icons: {
+    icon: '/crealogo.jpeg',
+    shortcut: '/crealogo.jpeg',
+    apple: '/crealogo.jpeg',
+  },
   openGraph: {
     title: "CREA PROYECTOS — Gestión Ambiental",
     description:
