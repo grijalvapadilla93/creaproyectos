@@ -512,12 +512,15 @@ const Hero = () => {
             </span>
           </h1>
 
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.2 }} className="text-[#141414]/70 text-base md:text-lg max-w-xl leading-relaxed mb-10">
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.2 }} className="text-[#141414]/70 text-base md:text-lg max-w-xl leading-relaxed mb-3">
             Acompañamos a empresas y municipios en la{' '}
             <span className="text-[#3C6E80] font-medium">gestión integral de licencias ambientales</span>,
             forestales y municipales, así como en la{' '}
             <span className="text-[#3C6E80] font-medium">planificación y ejecución de proyectos</span>{' '}
             de construcción y obra civil.
+          </motion.p>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.4 }} className="text-[#141414]/50 text-sm md:text-base max-w-xl leading-relaxed mb-10 italic">
+            Gestionamos licencias y ejecutamos obras. Un solo aliado para todo tu proyecto.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.7 }} className="flex flex-wrap gap-4">
@@ -558,6 +561,110 @@ const Hero = () => {
     </section>
   );
 };
+
+// ─── Enfoque: dos áreas ──────────────────────────────────
+const Enfoque = () => (
+  <section className="relative bg-white py-28 md:py-36 px-6 md:px-12 lg:px-20 overflow-hidden">
+    <Particles count={15} color={ARENA} />
+    <div className="max-w-6xl mx-auto">
+      <SectionReveal>
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="h-px w-8 bg-[#3C6E80]/20" />
+          <span className="text-[#3C6E80] text-[10px] tracking-[0.2em] font-medium">ENFOQUE</span>
+          <div className="h-px w-8 bg-[#3C6E80]/20" />
+        </div>
+        <h2 className="text-[#141414] text-3xl md:text-5xl font-bold tracking-tight text-center mb-4">
+          DOS ÁREAS, <span className="text-[#3C6E80]">UN SOLO EQUIPO</span>
+        </h2>
+        <p className="text-[#141414]/50 text-sm md:text-base text-center max-w-lg mx-auto leading-relaxed mb-14">
+          Integramos consultoría ambiental y ejecución de obras para acompañar tu proyecto de principio a fin.
+        </p>
+      </SectionReveal>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+        <SectionReveal delay={0.05}>
+          <div className="relative bg-[#F7F6F2] rounded-2xl p-8 md:p-10 h-full border border-[#141414]/5 overflow-hidden group">
+            {/* Decorative leaf background */}
+            <div className="absolute -right-10 -bottom-10 w-48 h-48 pointer-events-none opacity-[0.04] group-hover:opacity-[0.08] transition-opacity duration-500">
+              <svg viewBox="0 0 24 24" fill={TEAL} className="w-full h-full">
+                <path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z" />
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+              </svg>
+            </div>
+            <div className="relative">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: `${TEAL}15` }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={TEAL} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z" />
+                  <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+                </svg>
+              </div>
+              <h3 className="text-[#141414] text-2xl md:text-3xl font-bold tracking-tight mb-4">Consultoría Ambiental</h3>
+              <p className="text-[#141414]/60 text-sm md:text-base leading-relaxed mb-6 max-w-md">
+                Gestión integral de licencias y permisos ante entidades ambientales, forestales y municipales. Acompañamiento institucional completo.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  { label: 'Licencias ambientales (MARN)', color: TEAL },
+                  { label: 'Licencias forestales (INAB)', color: VERDE },
+                  { label: 'Evaluaciones de impacto ambiental', color: TEAL_DARK },
+                  { label: 'Acompañamiento institucional', color: ARENA },
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm text-[#141414]/60">
+                    <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
+                    {item.label}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </SectionReveal>
+        <SectionReveal delay={0.1}>
+          <div className="relative bg-[#F7F6F2] rounded-2xl p-8 md:p-10 h-full border border-[#141414]/5 overflow-hidden group">
+            {/* Decorative hardhat background */}
+            <div className="absolute -right-10 -bottom-10 w-48 h-48 pointer-events-none opacity-[0.04] group-hover:opacity-[0.08] transition-opacity duration-500">
+              <svg viewBox="0 0 24 24" fill={CARBON} className="w-full h-full">
+                <path d="M2 18v2h20v-2" />
+                <path d="M6 18v-6a6 6 0 0 1 12 0v6" />
+                <path d="M12 2v2" />
+                <path d="M4.5 5.5l1.5 1.5" />
+                <path d="M19.5 5.5L18 7" />
+              </svg>
+            </div>
+            <div className="relative">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: `${CARBON}08` }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={CARBON} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2 18v2h20v-2" />
+                  <path d="M6 18v-6a6 6 0 0 1 12 0v6" />
+                  <path d="M12 2v2" />
+                  <path d="M4.5 5.5l1.5 1.5" />
+                  <path d="M19.5 5.5L18 7" />
+                  <path d="M6 12H2" />
+                  <path d="M22 12h-4" />
+                </svg>
+              </div>
+              <h3 className="text-[#141414] text-2xl md:text-3xl font-bold tracking-tight mb-4">Ejecución de Obras</h3>
+              <p className="text-[#141414]/60 text-sm md:text-base leading-relaxed mb-6 max-w-md">
+                Planificación, desarrollo y ejecución de proyectos de construcción y obra civil con enfoque integral y control de calidad.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  { label: 'Planificación y diseño de proyectos', color: CARBON },
+                  { label: 'Gestión de permisos municipales', color: TEAL },
+                  { label: 'Ejecución de obra civil', color: VERDE },
+                  { label: 'Supervisión y control de calidad', color: ARENA },
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm text-[#141414]/60">
+                    <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
+                    {item.label}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </SectionReveal>
+      </div>
+    </div>
+  </section>
+);
 
 // ─── About ────────────────────────────────────────────────
 const About = () => (
@@ -1198,6 +1305,7 @@ export default function App() {
       <Navigation />
       <Hero />
       <WaveDivider color={CREMA} />
+      <Enfoque />
       <About />
       <LogoSection />
       <Services />
