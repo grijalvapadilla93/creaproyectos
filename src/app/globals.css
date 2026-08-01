@@ -2,25 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Base ─────────────────────────────────────────────── */
 html {
   scroll-behavior: auto;
 }
 
 body {
-  color: #1a1a1a;
-  background: #f5f5f3;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #141414;
+  background: #f7f6f2;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
-/* Lenis overrides */
+::selection {
+  background: #3c6e80;
+  color: #f7f6f2;
+}
+
+/* Elegant thin scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f6f2;
+}
+::-webkit-scrollbar-thumb {
+  background: #3c6e8066;
+  border-radius: 8px;
+  border: 2px solid #f7f6f2;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3c6e80;
+}
+
+/* Accessible focus rings */
+:focus-visible {
+  outline: 2px solid #3c6e80;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ─── Custom cursor ────────────────────────────────────── */
+@media (pointer: fine) {
+  html.custom-cursor,
+  html.custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+/* ─── Lenis smooth scroll ──────────────────────────────── */
 html.lenis {
   height: auto;
 }
-
 .lenis.lenis-smooth {
   scroll-behavior: auto;
 }
-
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ─── Marquee ──────────────────────────────────────────── */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee var(--marquee-duration, 32s) linear infinite;
+}
+.marquee-paused:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* ─── Grain / noise texture ────────────────────────────── */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ─── Topographic pattern for dark sections ────────────── */
+.topo-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='420' height='420' viewBox='0 0 420 420' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%233C6E80' stroke-width='0.6'%3E%3Cpath d='M210 60c80 0 150 55 150 130s-60 140-150 140S60 265 60 190 130 60 210 60Z'/%3E%3Cpath d='M210 95c62 0 115 42 115 100s-46 108-115 108-115-50-115-108 53-100 115-100Z'/%3E%3Cpath d='M210 130c44 0 80 30 80 70s-32 76-80 76-80-36-80-76 36-70 80-70Z'/%3E%3Cpath d='M210 165c26 0 45 18 45 40s-18 44-45 44-45-22-45-44 19-40 45-40Z'/%3E%3Cpath d='M40 40c30 10 45 35 40 60M380 40c-30 10-45 35-40 60M40 380c30-10 45-35 40-60M380 380c-30-10-45-35-40-60'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ─── Text stroke (outline wordmark) ───────────────────── */
+.text-stroke-cream {
+  -webkit-text-stroke: 1px rgba(247, 246, 242, 0.28);
+  color: transparent;
+}
+
+/* ─── Reduced motion ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }
