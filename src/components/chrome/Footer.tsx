@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp, Mail, MapPin, Phone } from 'lucide-react';
 import { scrollToId, getLenis } from '@/lib/scroll';
@@ -170,6 +171,12 @@ export default function Footer() {
             © {year} CREA PROYECTOS, S.A. — TODOS LOS DERECHOS RESERVADOS
           </p>
           <div className="flex items-center gap-6">
+            <Link
+              href="/politica-de-privacidad"
+              className="font-mono text-[10px] tracking-[0.2em] text-crema/40 hover:text-arena transition-colors"
+            >
+              POLÍTICA DE PRIVACIDAD
+            </Link>
             <p className="font-mono text-[10px] tracking-[0.2em] text-crema/40 hidden sm:block">
               GUATEMALA, CENTROAMÉRICA
             </p>
