@@ -123,7 +123,7 @@ export function Faq() {
 const contactRows = [
   { icon: Mail, label: 'CORREO', value: 'info@creaproyectos.com', href: 'mailto:info@creaproyectos.com' },
   { icon: Phone, label: 'WHATSAPP', value: '+502 5413 7785', href: 'https://wa.me/50254137785?text=Quiero%20informaci%C3%B3n' },
-  { icon: MapPin, label: 'UBICACIÓN', value: 'Guatemala, Centroamérica' },
+  { icon: MapPin, label: 'UBICACIÓN', value: 'Guatemala, Guatemala' },
   { icon: Clock, label: 'HORARIO', value: 'Lun – Vie · 8:00 a 17:00' },
 ];
 

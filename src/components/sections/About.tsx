@@ -3,60 +3,37 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Leaf, HardHat, ArrowUpRight, Landmark, Trees, ShieldCheck, Map } from 'lucide-react';
-import { Reveal, Eyebrow, Counter, Marquee, EASE, TiltCard } from '@/components/ui/primitives';
-
-// ─── Infinite marquee band (hero → about transition) ──────
-export function MarqueeBand() {
-  const items = [
-    'LICENCIAS AMBIENTALES', 'MARN', 'INAB', 'CONAP', 'CONRED', 'EIA', 'PGA',
-    'OBRA CIVIL', 'MUNICIPALIDADES', 'CUMPLIMIENTO NORMATIVO',
-  ];
-  const row = (
-    <div className="flex items-center">
-      {items.map((item, i) => (
-        <span key={i} className="flex items-center whitespace-nowrap">
-          <span className="font-mono text-[11px] tracking-[0.3em] text-crema/80 px-6">{item}</span>
-          <span className="font-display italic text-arena text-lg leading-none">+</span>
-        </span>
-      ))}
-    </div>
-  );
-  return (
-    <div className="relative bg-night border-y border-crema/10 py-5 overflow-hidden">
-      <Marquee duration={36}>{row}</Marquee>
-    </div>
-  );
-}
+import { Reveal, Eyebrow, Counter, EASE, TiltCard } from '@/components/ui/primitives';
 
 // ─── Two expertise cards ──────────────────────────────────
 const areas = [
   {
     num: '01',
     icon: Leaf,
-    title: 'Consultoría Ambiental',
+    title: 'Misión',
     accent: 'text-teal',
     chipBg: 'bg-teal/10',
-    desc: 'Gestión integral de licencias y permisos ante entidades ambientales, forestales y municipales. Acompañamiento institucional completo, con dominio técnico y normativo.',
+    desc: 'Impulsar el desarrollo sostenible de Guatemala acompañando cada proyecto con rigor técnico, cumplimiento normativo y un compromiso genuino con el entorno ambiental y social.',
     items: [
-      'Licencias ambientales (MARN)',
-      'Licencias forestales (INAB)',
-      'Evaluaciones de impacto ambiental',
-      'Acompañamiento institucional',
+      'Acompañamiento integral de principio a fin',
+      'Cumplimiento normativo garantizado',
+      'Soluciones técnicas de alto estándar',
+      'Relaciones de largo plazo con nuestros clientes',
     ],
     gradient: 'from-teal/12 via-transparent to-transparent',
   },
   {
     num: '02',
     icon: HardHat,
-    title: 'Ejecución de Obras',
+    title: 'Visión',
     accent: 'text-verde-deep',
     chipBg: 'bg-verde/10',
-    desc: 'Planificación, desarrollo y ejecución de proyectos de construcción y obra civil con enfoque integral, control de calidad y cumplimiento desde el diseño.',
+    desc: 'Ser la firma de referencia en consultoría y ejecución de proyectos en Guatemala, reconocida por su excelencia técnica, su integridad y su contribución a un país que crece de forma sostenible.',
     items: [
-      'Planificación y diseño de proyectos',
-      'Gestión de permisos municipales',
-      'Ejecución de obra civil',
-      'Supervisión y control de calidad',
+      'Referente nacional en gestión de proyectos',
+      'Excelencia e innovación continua',
+      'Crecimiento con impacto positivo',
+      'Un aliado estratégico para cada cliente',
     ],
     gradient: 'from-verde/12 via-transparent to-transparent',
   },
@@ -80,14 +57,6 @@ export function About() {
             </h2>
           </div>
           <div className="lg:col-span-4 flex flex-col justify-end">
-            <Reveal delay={0.15}>
-              <p className="text-carbon/65 text-sm md:text-base leading-relaxed">
-                Somos <strong className="text-carbon font-medium">CREA PROYECTOS, S.A.</strong>, una firma
-                guatemalteca que integra consultoría ambiental y ejecución de proyectos. Trabajamos de la
-                mano con <strong className="text-carbon font-medium">MARN, CONAP, CONRED, INAB</strong> y
-                municipalidades para que cada proyecto cumpla la normativa vigente — y se construya bien.
-              </p>
-            </Reveal>
           </div>
         </div>
 

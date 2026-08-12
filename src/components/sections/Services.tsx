@@ -6,7 +6,7 @@ import {
 } from 'framer-motion';
 import {
   Leaf, ClipboardList, FileCheck2, Landmark, HardHat, Plus,
-  Building2, Zap, Home, Sprout, Mountain, ArrowRight,
+  Building2, UtensilsCrossed, Home, Sprout, Mountain, ArrowRight,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { scrollToId } from '@/lib/scroll';
@@ -244,11 +244,10 @@ export function Services() {
 // ─── Sectors grid ─────────────────────────────────────────
 const sectors = [
   { icon: Building2, label: 'Construcción e infraestructura' },
-  { icon: Zap, label: 'Energía y telecomunicaciones' },
+  { icon: UtensilsCrossed, label: 'Bares y restaurantes' },
   { icon: Home, label: 'Desarrollo inmobiliario' },
   { icon: Sprout, label: 'Agroindustria' },
   { icon: Mountain, label: 'Turismo y hotelería' },
-  { icon: Landmark, label: 'Municipalidades y obra pública' },
 ];
 
 export function Sectors() {
@@ -271,7 +270,7 @@ export function Sectors() {
           />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {sectors.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.06} y={24} className="h-full">
               <motion.div

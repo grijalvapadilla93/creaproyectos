@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import {
   motion, useScroll, useSpring, useTransform, useMotionValueEvent,
 } from 'framer-motion';
-import { Search, Route, FolderKanban, BadgeCheck, Users, Gauge, MapPinned, Scale } from 'lucide-react';
+import { Search, Route, FolderKanban, BadgeCheck } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Reveal, Eyebrow, EASE } from '@/components/ui/primitives';
 
@@ -164,87 +164,6 @@ export function Process() {
               />
             ))}
           </div>
-        </div>
-
-        {/* Why CREA */}
-        <div className="mt-24 md:mt-32 border-t border-crema/10 pt-16">
-          <Reveal>
-            <p className="font-mono text-[10px] tracking-[0.35em] text-arena/80 mb-12">
-              POR QUÉ CREA PROYECTOS
-            </p>
-          </Reveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12">
-            {whyUs.map((w, i) => (
-              <motion.div
-                key={w.title}
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.7, delay: i * 0.08, ease: EASE }}
-              >
-                <w.icon size={22} strokeWidth={1.3} className="text-teal mb-5" />
-                <h4 className="text-crema font-medium text-[15px] mb-2.5">{w.title}</h4>
-                <p className="text-crema/50 text-[13px] leading-relaxed">{w.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-const whyUs = [
-  { icon: Scale, title: 'Dominio normativo', desc: 'Conocimiento profundo de la regulación ambiental guatemalteca y sus criterios institucionales.' },
-  { icon: Users, title: 'Un solo interlocutor', desc: 'Licencias y obra bajo un mismo equipo: menos coordinación, menos riesgos, más velocidad.' },
-  { icon: Gauge, title: 'Respuesta ágil', desc: 'Seguimiento diario de expedientes y comunicación directa con tu equipo de proyecto.' },
-  { icon: MapPinned, title: 'Cobertura nacional', desc: 'Operamos en todo el territorio: Petén, Izabal, Alta Verapaz, Escuintla y más.' },
-];
-
-// ─── Institutions strip ───────────────────────────────────
-const institutions = [
-  { name: 'MARN', full: 'Ministerio de Ambiente y Recursos Naturales', img: '/logos/marn.png' },
-  { name: 'CONAP', full: 'Consejo Nacional de Áreas Protegidas', img: '/logos/conap.png' },
-  { name: 'INAB', full: 'Instituto Nacional de Bosques', img: '/logos/inab.png' },
-  { name: 'CONRED', full: 'Coordinadora Nacional para la Reducción de Desastres', img: '/logos/conred.png' },
-];
-
-export function Institutions() {
-  return (
-    <section className="relative bg-white py-24 md:py-32 px-6 md:px-12 lg:px-16 overflow-hidden">
-      <div className="max-w-6xl mx-auto">
-        <Reveal>
-          <div className="text-center mb-14">
-            <p className="font-mono text-[10px] tracking-[0.35em] text-carbon/45 mb-3">
-              ENTIDADES CON LAS QUE TRABAJAMOS
-            </p>
-            <div className="w-12 h-px bg-teal/40 mx-auto" />
-          </div>
-        </Reveal>
-
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {institutions.map((inst, i) => (
-            <Reveal key={inst.name} delay={i * 0.08} y={24}>
-              <motion.figure
-                className="group flex flex-col items-center text-center gap-4 bg-crema/60 border border-carbon/5 rounded-2xl p-7 hover:bg-white hover:shadow-xl hover:shadow-teal/5 hover:border-teal/20 transition-all duration-500"
-                whileHover={{ y: -6 }}
-                data-cursor="hover"
-              >
-                <div className="relative w-20 h-20 rounded-xl bg-white border border-carbon/5 p-3 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                  <img src={inst.img} alt={`Logo de ${inst.name}`} className="w-full h-full object-contain" loading="lazy" />
-                  {/* shine sweep on hover */}
-                  <span
-                    className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-teal/10 to-transparent"
-                    aria-hidden
-                  />
-                </div>
-                <figcaption>
-                  <p className="font-mono text-xs tracking-[0.25em] text-carbon mb-1.5">{inst.name}</p>
-                  <p className="text-[11px] leading-snug text-carbon/45 max-w-[170px] mx-auto">{inst.full}</p>
-                </figcaption>
-              </motion.figure>
-            </Reveal>
-          ))}
         </div>
       </div>
     </section>

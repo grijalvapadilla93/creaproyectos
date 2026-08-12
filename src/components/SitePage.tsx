@@ -8,9 +8,9 @@ import CustomCursor from '@/components/chrome/CustomCursor';
 import Navbar, { SectionDots } from '@/components/chrome/Navbar';
 import Footer, { WhatsAppFloat } from '@/components/chrome/Footer';
 import Hero from '@/components/sections/Hero';
-import { MarqueeBand, About, StatsBand } from '@/components/sections/About';
+import { About, StatsBand } from '@/components/sections/About';
 import { Services, Sectors } from '@/components/sections/Services';
-import { Process, Institutions } from '@/components/sections/Process';
+import { Process } from '@/components/sections/Process';
 import { Faq, Contact } from '@/components/sections/FaqContact';
 
 const SECTION_IDS = ['hero', 'about', 'services', 'process', 'contact'];
@@ -66,13 +66,11 @@ export default function SitePage() {
 
         <main>
           <Hero ready={ready} />
-          <MarqueeBand />
           <About />
           <StatsBand />
           <Services />
           <Sectors />
           <Process />
-          <Institutions />
           <Faq />
           <Contact />
         </main>

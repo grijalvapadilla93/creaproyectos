@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import {
   motion, useScroll, useTransform, useMotionValue, useSpring,
 } from 'framer-motion';
-import { ArrowDown, ArrowRight, Leaf, HardHat } from 'lucide-react';
+import { ArrowDown, ArrowRight } from 'lucide-react';
 import { scrollToId } from '@/lib/scroll';
 import { Magnetic, EASE } from '@/components/ui/primitives';
 
@@ -72,22 +72,6 @@ export default function Hero({ ready }: { ready: boolean }) {
         style={{ y: contentY, x: contentX, opacity: contentOpacity }}
         className="relative flex-1 flex flex-col justify-center px-6 md:px-12 lg:px-16 pt-32 pb-24 max-w-7xl mx-auto w-full"
       >
-        {/* Eyebrow */}
-        <motion.div
-          className="flex items-center gap-4 mb-8"
-          initial={{ opacity: 0, y: 24 }}
-          animate={ready ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: d(0.15), ease: EASE }}
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-arena opacity-60" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-arena" />
-          </span>
-          <span className="font-mono text-[10px] md:text-[11px] tracking-[0.35em] text-crema/70">
-            CONSULTORÍA AMBIENTAL · EJECUCIÓN DE OBRA · GUATEMALA
-          </span>
-        </motion.div>
-
         {/* Headline — sans + serif italic mix */}
         <h1 className="text-crema font-semibold tracking-tight leading-[0.95] text-[13vw] sm:text-6xl md:text-7xl lg:text-[5.6rem] xl:text-[6.4rem] mb-8">
           <span className="block overflow-hidden">
@@ -97,7 +81,7 @@ export default function Hero({ ready }: { ready: boolean }) {
               animate={ready ? { y: 0 } : {}}
               transition={{ duration: 1, delay: d(0.3), ease: EASE }}
             >
-              Gestión ambiental
+              Gestión sostenible
             </motion.span>
           </span>
           <span className="block overflow-hidden">
@@ -126,16 +110,20 @@ export default function Hero({ ready }: { ready: boolean }) {
         </h1>
 
         {/* Subcopy */}
-        <motion.p
-          className="text-crema/70 text-base md:text-lg leading-relaxed max-w-xl mb-4"
+        <motion.div
+          className="flex items-center gap-4 mb-4"
           initial={{ opacity: 0, y: 24 }}
           animate={ready ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.9, delay: d(0.75), ease: EASE }}
         >
-          Licencias ambientales, forestales y municipales ante{' '}
-          <span className="text-arena">MARN, INAB, CONAP y CONRED</span>, más planificación y
-          ejecución de obra civil. Un solo aliado, de principio a fin.
-        </motion.p>
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-arena opacity-60" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-arena" />
+          </span>
+          <span className="font-mono text-[10px] md:text-[11px] tracking-[0.35em] text-crema/70">
+            CONSULTORÍA AMBIENTAL · EJECUCIÓN DE OBRA · GUATEMALA
+          </span>
+        </motion.div>
         <motion.p
           className="font-display italic text-crema/50 text-lg md:text-xl mb-10"
           initial={{ opacity: 0, y: 24 }}
@@ -170,27 +158,6 @@ export default function Hero({ ready }: { ready: boolean }) {
               AGENDAR CONSULTA
             </button>
           </Magnetic>
-        </motion.div>
-
-        {/* Dual-expertise chips */}
-        <motion.div
-          className="flex flex-wrap gap-3 mt-12"
-          initial={{ opacity: 0 }}
-          animate={ready ? { opacity: 1 } : {}}
-          transition={{ duration: 1, delay: d(1.2) }}
-        >
-          {[
-            { icon: Leaf, label: 'Consultoría ambiental' },
-            { icon: HardHat, label: 'Ejecución de obras' },
-          ].map(({ icon: Icon, label }) => (
-            <span
-              key={label}
-              className="inline-flex items-center gap-2 border border-crema/15 bg-crema/5 backdrop-blur-sm rounded-full px-4 py-2 text-xs text-crema/70"
-            >
-              <Icon size={13} strokeWidth={1.5} className="text-arena" />
-              {label}
-            </span>
-          ))}
         </motion.div>
       </motion.div>
 
